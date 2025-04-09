@@ -1,2 +1,10 @@
-# library
-Utilize object constructors to create a library and reading list web app
+# Library Project
+
+Utilize object constructors to create a library app
+
+## Screenshots
+
+[Landing Page]()
+
+## Live Preview
+[Live Preview]()
