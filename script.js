@@ -1,10 +1,9 @@
 // Library Web App
-
-// Array
-const myLibrary = ["V.A.L.I.S.", "Steppenwolf", "Be Here Now" ];
+const library = [];
 
 // Book Constructor 
 function Book(title,author,genre,pages,status) {
+  this.id = crypto.randomUUID();
   this.title = title;
   this.author = author;
   this.genre = genre;
@@ -12,16 +11,8 @@ function Book(title,author,genre,pages,status) {
   this.status = status;
 }
 
-const valis = new Book('V.A.L.I.S.', 'Philip K. Dick', 'SciFi', '288', 'yes');
-const steppenwolf = new Book('Steppenwolf', 'Herman Hesse', 'SciFi', '256', 'yes');
-
-// Add New Book to Array
-function addBookToLibrary() {
-  // take params, create a book then store it in the array
+// Add Book to Array
+function addBook(title, author, genre, pages, status) {
+  const newBook = new Book(title, author, genre, pages, status);
+  library.push(newBook);
 }
-
-//Push new book object to array 
-// const library = ["Banana", "Orange", "Apple", "Mango"];
-// library.push("Kiwi", "Lemon");
-
-// document.getElementById("demo").innerHTML = library;
