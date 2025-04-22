@@ -3,6 +3,10 @@
     font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif
 }
 
+body {
+    background-color: rgb(63, 40, 74);
+}
+
 h1, h2, h3, p {
     text-align: center;
 }
@@ -10,19 +14,27 @@ h1, h2, h3, p {
 h1 {
     margin-top: 30px;
     margin-bottom: 20px;
+    color: rgb(254,192,100);
+    text-shadow: 1px 1px 1.5px black;
 }
 
 h2 {
     font-weight: 700;
 }
 
+h3 {
+    color: rgb(254,192,100);
+    text-shadow: 1px 1px 1px black;
+}
+
 p {
     font-weight: 700;
     margin-top: 10px;
+    color: rgb(74, 64, 80);
 }
 
 .books-wrapper {
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(146,89,121);
     /* width: 100vw; */
     display: flex;
     margin: 20px;
@@ -41,6 +53,7 @@ p {
     padding: 70px;
     padding-left: 15px;
     padding-right: 15px;
-    background-color:rgb(255, 255, 255);
+    background-color:rgb(220, 216, 238);
+    color: rgb(63, 40, 74);
     border-radius: 15px;
 }
