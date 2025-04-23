@@ -11,7 +11,24 @@
     <header>
         <h1>BookCast</h1>
         <h3>Turn your reading list into podcasts!</h3>
+        <div class="add-book-wrapper">
+            <div class="add-book">
+                <form id="bookForm">
+                    <input type="text" id="title" placeholder=" Title" required>
+                    <input type="text" id="author" placeholder=" Author" required>
+                    <input type="text" id="genre" placeholder=" Genre" required>
+                    <input type="number" id="pages" placeholder=" # of Pages" required>
+                    <select id="status" required>
+                      <option value="Reading">Reading</option>
+                      <option value="Read">Read</option>
+                      <option value="Unread">Unread</option>
+                    </select>
+                    <button type="submit">Add</button>
+                  </form>
+            </div>
+        </div>
     </header>
+    
     <main>
        <div class="books-wrapper">
            <div class="cards-wrapper">
