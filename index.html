@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library App</title>
-    <link rel="stylesheet" href="styles.css"> 
-
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
@@ -13,11 +12,10 @@
         <h3>Turn your reading list into podcasts!</h3>
         <div class="add-book-wrapper">
             <div class="add-book">
-                <form id="bookForm">
+                <form id="form">
                     <input type="text" id="title" placeholder=" Title" required>
                     <input type="text" id="author" placeholder=" Author" required>
                     <input type="text" id="genre" placeholder=" Genre" required>
-                    <input type="number" id="pages" placeholder=" # of Pages" required>
                     <select id="status" required>
                       <option value="Reading">Reading</option>
                       <option value="Read">Read</option>
@@ -34,34 +32,31 @@
            <div class="cards-wrapper">
                 <div class="book-card">
                     <h2 class = "title">VALIS</h2>
-                    <h2>Philip K. Dick</h2>
+                    <h2 class = "author">Philip K. Dick</h2>
                     <p>Genre: SciFi</p>
-                    <p>Pages: 288</p>
                     <p>Read Status: Yes</p>
                 </div>
                 <div class="book-card">
                     <h2 class = "title">Steppenwolf</h2>
-                    <h2>Herman Hesse</h2>
+                    <h2 class = "author">Herman Hesse</h2>
                     <p>Genre: SciFi</p>
-                    <p>Pages: 256</p>
                     <p>Read Status: Yes</p>
                 </div>
                 <div class="book-card">
                     <h2 class = "title">Be Here Now</h2>
-                    <h2>Ram Dass</h2>
+                    <h2 class = "author">Ram Dass</h2>
                     <p>Genre: Spirituality</p>
-                    <p>Pages: 416</p>
                     <p>Read Status: Yes</p>
                 </div>
                 <div class="book-card">
                     <h2 class = "title">Being & Time</h2>
-                    <h2>Heidegger</h2>
+                    <h2 class = "author">Heidegger</h2>
                     <p>Genre: Philosophy</p>
-                    <p>Pages: 323</p>
                     <p>Read Status: Yes</p>
                 </div>
            </div>
        </div>
     </main>
+    <script src="script.js"></script>
 </body>
 </html>
