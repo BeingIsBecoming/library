@@ -1,7 +1,13 @@
-// Create Library Array
-const library = [];
+// Library Array
+const library = [
+    new Book("VALIS","Philip K. Dick", "SciFi", "Read"),
+    new Book("Steppenwolf", "Herman Hesse", "SciFi", "Read"),
+    new Book("Be Here Now", "Ram Dass", "Spirituality", "Read"),
+    new Book("Being & Time", "Martin Heidegger", "Philosophy", "Read"),
+    new Book("The Voice of the Silence", "Madame Blavatsky", "Spirituality", "Read"),
+];
 
-// Create Book Constructor
+// Book Constructor
 function Book (title, author, genre, status) {
     this.title = title;
     this.author = author;
@@ -9,6 +15,12 @@ function Book (title, author, genre, status) {
     this.status = status;
     this.id = crypto.randomUUID();
 }
+
+// Display Book Cards from Array
+library.forEach(book => {
+    
+}
+)
 
 // Add Book to Array
 function addBook(title,author,genre,status){
@@ -28,5 +40,5 @@ document.getElementById("form").addEventListener("submit", function(event){
     // Add New Book
     addBook(title, author, genre, status);
     // Clear Form Values
-    this.reset();
+    form.reset();
 });
