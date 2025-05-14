@@ -1,4 +1,4 @@
-// Library Array
+// Create Library Array
 const library = [
     new Book("VALIS","Philip K. Dick", "SciFi", "Read"),
     new Book("Steppenwolf", "Herman Hesse", "SciFi", "Read"),
@@ -16,16 +16,28 @@ function Book (title, author, genre, status) {
     this.id = crypto.randomUUID();
 }
 
-// Display Book Cards from Array
-library.forEach(book => {
-    
-}
-)
+// Display Book Cards 
+const cardsWrapper = document.querySelector(".cards-wrapper");
+function displayLibraryCards(){
+    cardsWrapper.innerHTML = "";
+    library.forEach(book => {
+        const card = document.createElement("div");
+        card.className = "book-card";
+        card.innerHTML =
+        `<h2 class = "title"> ${book.title}</h2>
+        <h2 class = "author"> ${book.author}</h2>
+        <p>Genre: ${book.genre}</p>
+        <p>Status: ${book.status}</p>`;
 
-// Add Book to Array
+        cardsWrapper.appendChild(card);
+    });
+}
+
+// Add Book to Library
 function addBook(title,author,genre,status){
     const newBook = new Book(title,author,genre,status);
     library.push(newBook);
+    displayLibraryCards();
 }
 
 // Form Handler
@@ -42,3 +54,5 @@ document.getElementById("form").addEventListener("submit", function(event){
     // Clear Form Values
     form.reset();
 });
+
+displayLibraryCards();
