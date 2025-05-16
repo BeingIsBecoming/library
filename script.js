@@ -1,5 +1,5 @@
 // Library Array
-const library = [
+let library = [
     new Book("VALIS","Philip K. Dick", "SciFi", "Read"),
     new Book("The Glass Bead Game", "Herman Hesse", "SciFi", "Read"),
     new Book("Be Here Now", "Ram Dass", "Spirituality", "Read"),
@@ -23,8 +23,6 @@ function displayLibraryCards() {
     library.forEach(book => {
         const card = document.createElement("div");
         card.className = "book-card";
-        card.setAttribute("data-id", book.id);
-
         card.innerHTML =
         `<h2 class = "title"> ${book.title}</h2>
         <h2 class = "author"> ${book.author}</h2>
@@ -35,7 +33,7 @@ function displayLibraryCards() {
         const deleteButton = document.createElement("button");
         deleteButton.className = "delete";
         deleteButton.innerText = "Remove";
-        deleteButton.addEventListener("click", ()=>{
+        deleteButton.addEventListener("click", ()=> {
             removeBook(book.id);
         });
         card.appendChild(deleteButton);
@@ -51,8 +49,7 @@ function addBook(title,author,genre,status){
 
 // Remove Book from Library
 function removeBook(bookID) {
-    library.splice(0, library.length, ...library.filter
-        (book => book.id !== bookID));
+    library = library.filter(book => book.id !== bookID);
     displayLibraryCards();
 }
 
