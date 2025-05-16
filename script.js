@@ -16,11 +16,21 @@ function Book (title, author, genre, status) {
     this.id = crypto.randomUUID();
 }
 
+// Prototype Read Status
+Book.prototype.toggleReadStatus = function() {
+    if (this.status === "Read") {
+        this.status = "Unread";
+    } else {
+        this.status = "Read";
+    }
+};
+
 // Display Book Cards 
 const cardsWrapper = document.querySelector(".cards-wrapper");
 function displayLibraryCards() {
     cardsWrapper.innerHTML = "";
     library.forEach(book => {
+        // Display Books
         const card = document.createElement("div");
         card.className = "book-card";
         card.innerHTML =
@@ -29,7 +39,8 @@ function displayLibraryCards() {
         <p>Genre: ${book.genre}</p>
         <p>Status: ${book.status}</p>`;
         cardsWrapper.appendChild(card);
-
+        
+        // Remove Button
         const deleteButton = document.createElement("button");
         deleteButton.className = "delete";
         deleteButton.innerText = "Remove";
@@ -37,6 +48,16 @@ function displayLibraryCards() {
             removeBook(book.id);
         });
         card.appendChild(deleteButton);
+        
+        // Status Button
+        const statusButton = document.createElement("button");
+        statusButton.className = "status-button";
+        statusButton.innerText = book.status === "Read" ? "Unread" : "Read";
+        statusButton.addEventListener("click", () => {
+            book.toggleReadStatus();
+            displayLibraryCards();
+        });
+        card.appendChild(statusButton);
     });
 }
 
